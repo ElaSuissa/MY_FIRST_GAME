@@ -1,1 +1,2 @@
-print ("my game")
+print ("my tnjk")
+ק
