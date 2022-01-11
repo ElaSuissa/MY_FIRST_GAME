@@ -1,1 +1,1 @@
-print ("my tnjk")
+print ("my tnjt") 
