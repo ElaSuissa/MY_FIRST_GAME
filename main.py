@@ -42,6 +42,13 @@ def print_lasers():
   if len(laser_list) > 0 and laser_list[0][1] < 0:
     laser_list.remove(laser_list[0])
 
+SOUND_FILE = "song.mp3"
+GUN_SHOOT = "Gun shoot.mp3"
+pygame.mixer.init()
+pygame.mixer.music.load(SOUND_FILE)
+pygame.mixer.music.load(GUN_SHOOT)
+pygame.mixer.Channel(0).play(pygame.mixer.Sound(SOUND_FILE))
+
 
 while play:
   screen.blit(bk_image,(0,0))
@@ -54,7 +61,14 @@ while play:
       if event.key == pygame.K_RIGHT:
         ship_x += x_step
       if event.key == pygame.K_SPACE:
-        laser_list.append([ship_x+21,ship_y])
+        laser_list.append([ship_x+21,ship_y]) 
+        pygame.mixer.Channel(1).play(pygame.mixer.Sound(GUN_SHOOT))
+
+
+ 
+
+       
+
 
   screen.blit(ship_image,(ship_x,ship_y))
   pygame.draw.circle(screen,(0,0,0),(circle_x , circle_y),10)
